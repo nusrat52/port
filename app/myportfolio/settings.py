@@ -143,10 +143,20 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "myportfolio/static"]
-STATIC_ROOT = BASE_DIR / "staticfiles"  # Ensure this directory exists
+# STATIC_ROOT = BASE_DIR / "staticfiles" 
 
 
  
 
 MEDIA_URL = "/media/"
-MEDIA_ROOT = BASE_DIR / "mediafiles"  # Change this for local development
+# MEDIA_ROOT = BASE_DIR / "mediafiles"  
+
+
+
+
+
+STATIC_ROOT = "/home/app/web/staticfiles"
+
+MEDIA_ROOT = "/home/app/web/mediafiles"
+
+ 
