@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block body %}
+
+
+
+
+<div class="page-title">
+  <h1>Portfolio</h1>
+  <div class="page-subtitle">
+    <h4> My Works </h4>
+  </div>
+</div>
+
+<div id="content" class="page-content site-content single-post" role="main">
+
+  <div class="row">
+    <div class=" col-xs-12 col-sm-12 ">
+      <div id="portfolio_content_q" class="portfolio-content">
+
+
+
+        <div class="portfolio-grid three-columns shuffle">
+          {% for project in projects %}
+
+          <figure class="item standard" data-groups='["category_all", "category_detailed"]'>
+            <div class="portfolio-item-img">
+              <img src="{{ project.images_list.0 }}" alt="Full Project 2" title="" />
+              <a  href="{% url 'detailed' project.slug %}" ></a>
+            </div>
+
+            <i class="far fa-file-alt"></i>
+            <h4 class="name">{{ project.name }}</h4>
+            <span class="category">Detailed</span>
+          </figure>
+          <!-- /Portfolio Item 1 -->
+
+
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

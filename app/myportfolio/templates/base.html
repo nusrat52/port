@@ -1,0 +1,161 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Nusret ibrahimli | Senior Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="The Best Developer and handsome in the world !" />
+  <meta name="keywords"
+    content="Nusret Ibrahimli, React, next.js, Developer, Handsome, Shamkhor, Semkir, Agdash, Guneshli, Akhmedli, Oil academy, Azerbaijan State oil and industry academy" />
+  <meta name="author" content="lmpixels" />
+  <link  rel="shortcut icon" href="{% static 'images/sunglassesicon.png' %}">
+
+
+  
+  <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+  <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+
+
+  <script src="https://kit.fontawesome.com/f8e6204878.js" crossorigin="anonymous"></script>
+
+
+  <script src="{% static 'js/modernizr.custom.js' %}"></script>
+</head>
+
+<body class="page">
+
+  <div style="background-image: url({% static 'images/main_bg.png' %});" class="lm-animated-bg"></div>
+
+  <!-- Loading animation -->
+  <div class="preloader">
+    <div class="preloader-animation">
+      <div class="preloader-spinner">
+        
+      </div>
+    </div>
+  </div>
+  <!-- /Loading animation -->
+
+  <!-- Scroll To Top Button -->
+  <div class="lmpixels-scroll-to-top"><i class="fa-solid fa-angle-up"></i></div>
+  <!-- /Scroll To Top Button -->
+
+  <div class="page-scroll">
+    <div id="page_container" class="page-container bg-move-effect" data-animation="transition-flip-in-right">
+
+      <!-- Header -->
+      <header id="site_header" class="header">
+        <div class="header-content clearfix">
+
+          <!-- Text Logo -->
+          <div class="text-logo">
+            <a href="{% url 'homePage' %}">
+              <div class="logo-symbol">N</div>
+              <div class="logo-text">Nusret <span>Ibrahimli</span></div>
+            </a>
+          </div>
+          <!-- /Text Logo -->
+
+          <!-- Navigation -->
+          <div class="site-nav mobile-menu-hide">
+            <ul class="leven-classic-menu site-main-menu">
+
+
+              <li class="menu-item">
+                <a href="{% url 'resume' %}">Resume</a>
+              </li>
+
+              <li class="menu-item">
+                <a href="{% url 'portfolio' %}">Portfolio</a>
+              </li>
+
+
+              <li class="menu-item">
+                <a href="{% url 'contact' %}">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Mobile Menu Toggle -->
+          <a class="menu-toggle mobile-visible">
+            <i class="fa fa-bars"></i>
+          </a>
+          <!-- Mobile Menu Toggle -->
+        </div>
+      </header>
+      <!-- /Header -->
+
+
+
+      {% block body %}
+
+      {% endblock %}
+
+
+
+      <!-- Footer -->
+      <footer class="site-footer clearfix">
+        <div class="footer-social">
+          <ul class="footer-social-links">
+            <li>
+              <a href="https://www.linkedin.com/in/nusret-ibrahimli-b42063148/" target="_blank">Linkedin</a>
+            </li>
+
+            <li>
+              <a href="https://www.facebook.com/nusret.ibrahimli/" target="_blank">Facebook</a>
+            </li>
+
+            <li>
+              <a href="https://www.instagram.com/nusrat_ibrahimli/" target="_blank">Instagram</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-copyrights">
+          <p>© <span class="rightsOfYear"></span> All rights reserved. LMPixels.</p>
+        </div>
+      </footer>
+      <!-- /Footer -->
+
+    </div>
+  </div>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const elements = document.querySelectorAll(".rightsOfYear");
+      const currentYear = new Date().getFullYear();
+
+      elements.forEach(element => {
+        element.textContent = currentYear;
+      });
+    });
+  </script>
+
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrDf32aQTCVENBhFJbMBKOUTiUAABtC2o"></script>
+  <script src="{% static 'js/jquery-2.1.3.min.js' %}"></script>
+  <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.shuffle.min.js' %}"></script>
+  <script src="{% static 'js/masonry.pkgd.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/jquery.googlemap.js' %}"></script>
+  <script src="{% static 'js/validator.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
+    integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+    data-cf-beacon='{"rayId":"911d6162dc089dd4","version":"2025.1.0","r":1,"serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"token":"94b99c0576dc45bf9d669fb5e9256829","b":1}'
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,188 @@
+{% extends "base.html" %}
+{% block body %}
+
+
+
+
+<div id="main" class="site-main">
+  <div id="main-content" class="single-page-content">
+    <div id="primary" class="content-area">
+
+      <div class="page-title">
+        <h1>Resume</h1>
+        <div class="page-subtitle">
+          <h4> 8 Years of Experience</h4>
+        </div>
+      </div>
+
+      <div id="content" class="page-content site-content single-post" role="main">
+        <div class="row">
+
+          <div class=" col-xs-12 col-sm-6 ">
+            <div class="block-title">
+              <h2>Education</h2>
+            </div>
+
+            <div id="timeline_1" class="timeline clearfix">
+
+              {% for edu in education %}
+              <div class="timeline-item clearfix">
+                <h5 class="item-period ">{{ edu.year }}</h5>
+                <span class="item-company">{{ edu.position }}</span>
+                <h4 class="item-title">{{ edu.companyName }}</h4>
+                <p>{{ edu.description }}</p>
+              </div>
+              {% endfor %}
+
+            </div>
+          </div>
+
+          <div class=" col-xs-12 col-sm-6 ">
+            <div class="block-title">
+              <h2>Experience</h2>
+            </div>
+
+            <div id="timeline_2" class="timeline clearfix">
+
+              {% for exp in experience %}
+              <div class="timeline-item clearfix">
+                <h5 class="item-period current">{{ exp.year }}</h5>
+                <span class="item-company">{{ exp.position }}</span>
+                <h4 class="item-title">{{ exp.companyName }}</h4>
+                <p>{{ exp.description }}</p>
+              </div>
+              {% endfor %}
+
+
+
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="row">
+          <div class=" col-xs-12 col-sm-12 ">
+            <div class="p-20"></div>
+
+            <div class="block-title">
+              <h2>Certificates</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class=" col-xs-12 col-sm-6 ">
+            <a href="//lmpixels.com/wp/leven-wp/wp-content/uploads/2019/11/1.jpg" class="lightbox">
+              <div class="certificate-item clearfix">
+                <div class="certi-logo">
+                  <img src="./img/clients/client-7.png" alt="logo">
+                </div>
+
+                <div class="certi-content">
+                  <div class="certi-title">
+                    <h4>Psyhology of Intertnation Design</h4>
+                  </div>
+
+                  <div class="certi-id">
+                    <span>Membership ID: XXXX</span>
+                  </div>
+                  <div class="certi-date">
+                    <span>19 April 2018</span>
+                  </div>
+
+                  <div class="certi-company">
+                    <span></span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class=" col-xs-12 col-sm-6 ">
+            <a href="//lmpixels.com/wp/leven-wp/wp-content/uploads/2019/11/1.jpg" class="lightbox">
+              <div class="certificate-item clearfix">
+                <div class="certi-logo">
+                  <img src="//lmpixels.com/wp/leven-wp/wp-content/uploads/2019/12/client-1.png" alt="logo">
+                </div>
+
+                <div class="certi-content">
+                  <div class="certi-title">
+                    <h4>Psyhology of Intertnation Design</h4>
+                  </div>
+
+                  <div class="certi-id">
+                    <span>Membership ID: XXXX</span>
+                  </div>
+
+                  <div class="certi-date">
+                    <span>19 April 2018</span>
+                  </div>
+
+                  <div class="certi-company">
+                    <span></span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+        </div> -->
+
+        <div class="row">
+          <div class=" col-xs-12 col-sm-12 ">
+            <div class="p-40"></div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class=" col-xs-12 col-sm-6 ">
+            <div class="block-title">
+              <h2>Skills</h2>
+            </div>
+
+            <div id="skills_1" class="skills-info skills-first-style">
+ {% for e in tool1 %}
+              <div class="clearfix">
+                <h4>{{ e.name }}</h4>
+                <div class="skill-value">{{ e.percent }}%</div>
+              </div>
+
+              <div id="skill_{{ forloop.counter }}" data-value="{{ e.percent }}" class="skill-container">
+                <div class="skill-percentage"></div>
+              </div>
+ 
+ {% endfor %}
+             </div>
+
+          </div>
+          <div  class="col-xs-12 col-sm-6 mt-3">
+ 
+<br/>
+<br/>
+
+
+            <div id="skills_2" class="skills-info skills-first-style">
+              <!-- Skill 5 -->
+
+              {% for e in tool2 %}
+              <div class="clearfix">
+                <h4>{{ e.name }}</h4>
+                <div class="skill-value">{{ e.percent }}%</div>
+              </div>
+              <div id="skill_{{ forloop.counter }}" data-value="{{ e.percent }}" class="skill-container">
+                <div class="skill-percentage"></div>
+              </div>
+              {% endfor %}
+
+              <!-- /Skill 5 -->
+
+ 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

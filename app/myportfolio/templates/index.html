@@ -1,0 +1,267 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+
+
+
+ 
+
+
+<div id="main" class="site-main">
+  <div id="main-content" class="single-page-content">
+    <div id="primary" class="content-area">
+      <div id="content" class="page-content site-content single-post" role="main">
+        <!-- Home Page Top Part -->
+        <div class="row">
+          <div class=" col-xs-12 col-sm-12">
+            <div class="home-content">
+              <div class="row flex-v-align">
+
+                <div class="col-sm-12 col-md-5 col-lg-5">
+                  <div class="home-photo">
+                    <!-- <div class="hp-inner" style="background-image: url({% static 'images/me.jpg' %});"> -->
+                    <div class="hp-inner" style="background-image: url({{ detail.photo.url }});">
+                    </div>
+                  </div>
+                </div>
+                <!-- <img src="{{ detail.photo.url }}" alt=""> -->
+                <div class="col-sm-12 col-md-7 col-lg-7">
+                  <div class="home-text hp-left">
+                    <div class="owl-carousel text-rotation">
+                      <div class="item">
+                        <h4>{{ detail.profession.first }}</h4>
+                      </div>
+
+                      <div class="item">
+                        <h4>{{ detail.profession.second }} </h4>
+                      </div>
+                    </div>
+                    <h1>{{ detail.name }} {{ detail.sirName }}</h1>
+                    <!-- <p>Experienced Full-Stack Developer with 5+ years of frontend expertise (React, Next.js) and
+                      strong junior-level backend knowledge (Django, PostgreSQL). Passionate about building
+                      scalable, high-performance web applications. Proficient in modern development tools and
+                      eager to contribute to innovative projects. </p> -->
+
+                    <p>{{ detail.description }}</p>
+
+
+                    <div class="home-buttons">
+
+                      <a class="btn btn-primary" href="{% static 'images/nusretibrahimli.pdf' %}"
+                        download="nusretibrahimli.pdf">Download CV</a>
+                      <a href="{% url 'contact' %}" class="btn btn-secondary">Contact</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Home Page Top Part -->
+
+        <!-- Services -->
+        <div class="row">
+          <div class="col-xs-12 col-sm-12">
+            <div class="p-50"></div>
+
+            <div class="block-title">
+              <h2>What I Do</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">
+            <div class="info-list-w-icon">
+              <div class="info-block-w-icon">
+                <div class="ci-icon">
+                  <i class="linecons linecons-pen"></i>
+                </div>
+
+                <div class="ci-text">
+                  <h4>Full-Stack Web Development</h4>
+                  <p>With 5+ years of experience in React and Next.js and junior-level Django backend skills, I
+                    specialize in building modern, scalable web applications. From crafting dynamic front-end UIs
+                    to implementing robust API integrations, I ensure seamless user experiences.</p>
+                </div>
+              </div>
+
+              <div class="info-block-w-icon">
+                <div class="ci-icon">
+                  <i class="linecons linecons-display"></i>
+                </div>
+
+                <div class="ci-text">
+                  <h4>UI/UX & Web Design</h4>
+                  <p>I bring Figma designs to life with clean, responsive, and accessible UI components. Using
+                    CSS, Tailwind, and Chakra UI, I create engaging interfaces that enhance usability and
+                    performance.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6">
+            <div class="info-list-w-icon">
+
+              <div class="info-block-w-icon">
+                <div class="ci-icon">
+                  <i class="linecons linecons-shop"></i>
+                </div>
+
+                <div class="ci-text">
+                  <h4>E-commerce Development</h4>
+                  <p>I develop high-performance e-commerce platforms with React, Next.js, and Django, optimizing
+                    user experience, payment processing, and product management. I also ensure SEO-friendly
+                    structures for better visibility.</p>
+                </div>
+              </div>
+
+              <div class="info-block-w-icon">
+                <div class="ci-icon">
+                  <i class="linecons linecons-megaphone"></i>
+                </div>
+
+                <div class="ci-text">
+                  <h4>Deployment & DevOps</h4>
+                  <p>I deploy applications using Docker, Nginx, Gunicorn, and PostgreSQL, ensuring secure,
+                    scalable, and efficient deployment strategies. I'm also experienced with setting up CI/CD
+                    pipelines and containerized environments.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /Services -->
+
+        <div class="row testimonialss">
+          <div class="col-xs-12 col-sm-12">
+            <div class="p-20"></div>
+
+            <!-- Testimonials -->
+            <div class="block-title">
+              <h2>Testimonials</h2>
+            </div>
+
+            <div id="testimonials_1" class="testimonials owl-carousel" data-mobile-items="1" data-tablet-items="2"
+              data-items="2">
+              {% for testimonial in testimonials %}
+              <div class="testimonial-item">
+                <!-- Testimonial Content -->
+                <div class="testimonial-content">
+                  <!-- Picture -->
+                  <div class="testimonial-picture">
+                    <!-- <img src="{% static 'images/ilkin.jpg' %}" alt="Billy Adams" /> -->
+                    <img src="{{ testimonial.photo.url }}" alt="{{ testimonial.name }}" />
+
+
+                  </div>
+
+                  <div class="testimonial-text">
+                    <p>{{ testimonial.description }}</p>
+                  </div>
+                  <!-- /Testimonial Text -->
+
+                  <!-- Testimonial author information -->
+                  <div class="testimonial-author-info">
+                    <h5 class="testimonial-author">{{ testimonial.name }}</h5>
+                    <p class="testimonial-firm">{{ testimonial.profession }}</p>
+                  </div>
+                  <!-- /Testimonial author information -->
+
+                  <div class="testimonial-icon">
+                    <i class="fa fa-quote-left"></i>
+                  </div>
+
+                  <div class="testimonial-icon-big">
+                    <i class="fa fa-quote-right"></i>
+                  </div>
+                </div>
+                <!-- /Testimonial Content -->
+              </div>
+              {% endfor %}
+
+            </div>
+
+
+            <div class="p-40"></div>
+
+
+
+            <div id="clients_1" class="clients owl-carousel" data-mobile-items="1" data-tablet-items="3" data-items="6">
+
+              {% for tool in tools %}
+              <div class="client-block">
+                <a   title="Golden Grid">
+                  <img src="{{ tool.photo.url }}" alt="{{ tool.name }}">
+                </a>
+              </div>
+
+              {% endfor %}
+            </div>
+
+
+            <div class="p-40"></div>
+
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-12">
+            <div class="block-title">
+              <h2>Fun Facts</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-3">
+            <div class="lm-info-block gray-default">
+              <i class="linecons linecons-heart"></i>
+              <h4>Happy Clients</h4>
+              <span class="lm-info-block-value">578</span>
+              <span class="lm-info-block-text"></span>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-3">
+            <div class="lm-info-block gray-default">
+              <i class="linecons linecons-clock"></i>
+              <h4>Working Hours</h4>
+              <span class="lm-info-block-value">4,780</span>
+              <span class="lm-info-block-text"></span>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-3 ">
+            <div class="lm-info-block gray-default">
+              <i class="linecons linecons-star"></i>
+              <h4>Projects</h4>
+              <span class="lm-info-block-value">20+</span>
+              <span class="lm-info-block-text"></span>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-3 ">
+            <div class="lm-info-block gray-default">
+              <i class="linecons linecons-cup"></i>
+              <h4>Coffee Consumed</h4>
+              <span class="lm-info-block-value">1,286</span>
+              <span class="lm-info-block-text"></span>
+            </div>
+          </div>
+        </div>
+        <!-- /Fun Facts -->
+
+        <div class="p-40"></div>
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
