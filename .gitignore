@@ -19,7 +19,7 @@ env/
 
 # Django static files
 staticfiles/
-static/
+# static/
 
 # Media uploads
 media/
