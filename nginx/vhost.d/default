@@ -1,0 +1,9 @@
+location /static/ {
+  alias /home/app/web/staticfiles/;
+  autoindex on;
+}
+
+location /media/ {
+  alias /home/app/web/mediafiles/;
+  autoindex on;
+}
