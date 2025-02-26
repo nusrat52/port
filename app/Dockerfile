@@ -20,4 +20,4 @@ COPY . .
 RUN python manage.py collectstatic --noinput
 
 # Start Gunicorn server
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "first_django.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "myportfolio.wsgi:application"]
