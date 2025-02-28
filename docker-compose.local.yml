@@ -5,7 +5,7 @@ services:
     restart: always
     build:
       context: ./app
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.local
     command: ["sh", "./start.sh"]
     volumes:
       - static_volume:/home/app/web/staticfiles
